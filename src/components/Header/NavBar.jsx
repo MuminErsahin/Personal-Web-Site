@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import { toggleDarkMode, toggleEng, toggleTr } from "../../store/Action/actions";
+import { thunkFunction, toggleDarkMode, toggleEng, toggleTr } from "../../store/Action/actions";
+
 
 function NavBar() {
   const DarkMode = useSelector((state) => state.darkMode);
@@ -12,6 +13,7 @@ function NavBar() {
     } else {
       dispatch(toggleEng());
     }
+    dispatch(thunkFunction())
   };
 
   const toggleMod = () => {
@@ -19,8 +21,8 @@ function NavBar() {
   };
 
   return (
-    <div className="flex justify-end  max-md:flex-col max-md:items-center max-md:gap-5 max-md:pb-10">
-      <div className="m-8 pr-9 me-16  max-md:me-0 max-md:m-4">
+    <div className="flex justify-end   max-md:flex  max-md:flex-row  max-md:items-center max-md:gap-5 max-md:pb-10">
+      <div className="m-8 pr-9 me-16    max-md:me-0 max-md:m-4">
         <button
           className="text-3xl font-bold max-md:text-[22px]  text-[#777777] relative max-md:text-center"
           onClick={toggleLanguage}

@@ -8,7 +8,7 @@ function Footer() {
     <div
       className={`${
         darkMode ? "dark" : ""
-      } dark:bg-[#252128] flex flex-col items-center justify-center mx-auto p-4 md:p-8  max-w-full md:max-w-[800.67px] h-auto md:h-[605px] gap-3`}
+      } dark:bg-[#252128] flex flex-col items-center justify-center mx-auto p-4 md:p-8  max-w-full  h-auto md:h-[605px] gap-3`}
     >
       <h1 className="text-[36px] md:text-[48px] lg:text-[72px] font-bold text-[#4731D3] text-center">
         {contact.title}
