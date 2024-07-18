@@ -10,6 +10,7 @@ import Project from './components/Project/Project'
 import Skills from './components/Skills'
 import { useEffect } from 'react'
 import { thunkFunction } from './store/Action/actions'
+import Loading from './components/Loading';
 function App() {
   const dispatch = useDispatch()
 const data = useSelector((state) => state.textData)
@@ -20,35 +21,8 @@ useEffect(() => {
 },[])
 
 
-if(data===null) return(<div className="loader">
-  <div className="box box0">
-    <div></div>
-  </div>
-  <div className="box box1">
-    <div></div>
-  </div>
-  <div className="box box2">
-    <div></div>
-  </div>
-  <div className="box box3">
-    <div></div>
-  </div>
-  <div className="box box4">
-    <div></div>
-  </div>
-  <div className="box box5">
-    <div></div>
-  </div>
-  <div className="box box6">
-    <div></div>
-  </div>
-  <div className="box box7">
-    <div></div>
-  </div>
-  <div className="ground">
-    <div></div>
-  </div>
-</div>
+if(data===null) return (
+  <Loading />
 )
   return (
     <>
@@ -59,7 +33,9 @@ if(data===null) return(<div className="loader">
      <Project />
      <Footer />
      </div>
+    
      <ToastContainer />
+     
     </>
   )
 }
